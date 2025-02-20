@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <nav>
+            Already have an account? : 
+            <a href="/login">
+                <button>Sign In</button>
+            </a>
+        </nav>
+        <button onclick="requestData()">MyButton</button>  
+        <!--<h1 id="value">Value: </h1> -->
+    </body>
+    
+    <script>
+        async function requestData() {
+            const response = await fetch("/button");
+            const json = await response.json();
+            const value = JSON.stringify(json);
+            console.log(value);
+
+            document.getElementById("value").textContent = "Value: " + json.hello;
+        }
+    </script>
+</html>
+
+

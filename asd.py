@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-    return render_template("index.html")
+    return render_template("base.html")
 
 
 @app.route("/milan")
@@ -21,7 +21,7 @@ def hello(name):
 def button():
     print("button clicked")
     data = {"data":"myvalue", "hello":"hellovalue"}
-    return data
+    return jsonify(data)
 
 @app.route("/login")
 def loggingin():
@@ -34,12 +34,19 @@ def loggingin():
     </form>
     """
 
+@app.route("/gallery")
+def gallery():
+    return render_template("gallery.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contacts.html")
+
 @app.route("/loggedin", methods=["POST"])
 def login():
     username = request.form.get("username", "Guest")
     password = request.form.get("password", "")
     return f"""
-    <nav> Back home: <a href="/"><button>Home
-    </button></a>
+    <nav> Back home: <a href="/"><button>Home</button></a>
     User {username} logged in!
     """

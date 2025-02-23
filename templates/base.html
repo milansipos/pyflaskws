@@ -1,0 +1,26 @@
+    <!DOCTYPE html>
+
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}"/>
+            <title>milan</title>
+        </head>
+        <body>
+            <button id="navbuttonx" onclick="showmenu()">X</button>
+            <nav id="navi">
+                Already have an account? 
+                <button onclick="location.href='/login'" class="navbutton">Sign in</button>
+                Reference Pictures
+                <button onclick="location.href='/gallery'" class="navbutton">Gallery</button>
+                Reach us here
+                <button onclick="location.href='/contact'" class ="navbutton">Contacts</button>
+            </nav>
+            <button onclick="requestData()">MyButton</button>  
+            <h1 id="value">Value: </h1>
+        </body>
+
+        <script defer src="{{ url_for('static', filename='apps/baseapp.js') }}"></script>
+        
+    </html>

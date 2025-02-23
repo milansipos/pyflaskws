@@ -1,0 +1,23 @@
+body {
+    background-color: ghostwhite;
+    font-size: large;
+}
+h1 {
+    color: aqua;
+}
+nav {
+    background-color: aliceblue;
+    text-align: center;
+    display: none;
+    transition: 1s;
+}
+.navbutton {
+    background-color:blanchedalmond;
+    text-align: center;
+    width: 70px;
+    height: 35px;
+    font: medium;
+}
+button:hover {
+    opacity: 0.8;
+}
